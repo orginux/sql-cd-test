@@ -1,10 +1,10 @@
 ---
 clusters:
     - name: ch-test-host
-      host: my.clickhouse.local
+      host: clickhouse-server
       port: 9000
-      user: user | ENV
-      pass: pass | ENV
+      user: $CH_USER
+      pass: $CH_PASS
       sources:
         - git-repo: git@github.com:orginux/sql-cd-test.git
           git-branch: main
