@@ -1,7 +1,7 @@
 ---
 clusters:
-    - name: ch-test-host
-      host: clickhouse-server
+    - name: ch-test-host-1
+      host: clickhouse-server-1
       port: 9000
       user: $CH_USER
       pass: $CH_PASS
@@ -10,3 +10,14 @@ clusters:
           git-branch: main
           git-paths:
             - queries/common
+    - name: ch-test-host-2
+      host: clickhouse-server-2
+      port: 9000
+      user: $CH_USER
+      pass: $CH_PASS
+      sources:
+        - git-repo: git@github.com:orginux/sql-cd-test.git
+          git-branch: main
+          git-paths:
+            - queries/common
+            - queries/team_1
