@@ -3,21 +3,34 @@ clusters:
     - name: ch-test-host-1
       host: clickhouse-server-1
       port: 9000
-      user: $CH_USER
-      pass: $CH_PASS
-      sources:
-        - git-repo: git@github.com:orginux/sql-cd-test.git
-          git-branch: main
-          git-paths:
-            - queries/common
+      tenants:
+        - name: team_1
+          user: $CH_USER
+          pass: $CH_PASS
+          sources:
+            - git-repo: git@github.com:orginux/sql-cd-test.git
+              git-branch: main
+              git-paths:
+                - queries/common
+                - queries/team_1
+        - name: team_2
+          user: $CH_USER
+          pass: $CH_PASS
+          sources:
+            - git-repo: git@github.com:orginux/sql-cd-test.git
+              git-branch: main
+              git-paths:
+                - queries/common
     - name: ch-test-host-2
       host: clickhouse-server-2
       port: 9000
-      user: $CH_USER
-      pass: $CH_PASS
-      sources:
-        - git-repo: git@github.com:orginux/sql-cd-test.git
-          git-branch: main
-          git-paths:
-            - queries/common
-            - queries/team_1
+      tenants:
+        - name: team_3
+          user: $CH_USER
+          pass: $CH_PASS
+          sources:
+            - git-repo: git@github.com:orginux/sql-cd-test.git
+              git-branch: main
+              git-paths:
+                - queries/common
+                - queries/team_3
