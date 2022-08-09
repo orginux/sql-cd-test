@@ -33,4 +33,3 @@ clusters:
               git-branch: main
               git-paths:
                 - queries/common
-                - queries/team_3
